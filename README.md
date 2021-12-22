@@ -1,1 +1,1 @@
-# automated-online-calculator
+# Automated-online-calculator
