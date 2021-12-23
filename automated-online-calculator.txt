@@ -1,21 +1,24 @@
 package selenium_trening.basic;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 public class calculater {
 	
 	@Test
-		public void print() {
+		public void print() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver","C:\\Driver\\chromedriver.exe");
 		WebDriver driver= new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.calculator.net");
 		
-		
+		//MULTIPLICATION
 		WebElement textBox_firstname = driver.findElement(By.xpath("(//span[@class='scinm'])[4]"));
 		textBox_firstname.click();
 		WebElement textBox_firstname1 = driver.findElement(By.xpath("(//span[@class='scinm'])[8]"));
@@ -28,85 +31,74 @@ public class calculater {
 		textBox_firstname5.click();		
 		textBox_firstname1.click();
 		textBox_firstname5.click();		
-	}
-	@Test
-	public void prints() {
-		System.setProperty("webdriver.chrome.driver","C:\\Driver\\chromedriver.exe");
-		WebDriver driver= new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://www.calculator.net");
 		
-		WebElement textBox_firstname = driver.findElement(By.xpath("(//span[@class='scinm'])[4]"));
+		Thread.sleep(3000);
+		
+		WebElement textBox = driver.findElement(By.xpath("(//span[@class='scieq'])[1]"));
+		textBox.click();
+		
+		//DIVISION
 		textBox_firstname.click();
-		WebElement textBox_firstname1 = driver.findElement(By.xpath("(//span[@class='scinm'])[10]"));
-		textBox_firstname1.click();
-		textBox_firstname1.click();
-		textBox_firstname1.click();
+		WebElement textBox_0 = driver.findElement(By.xpath("(//span[@class='scinm'])[10]"));
+		textBox_0.click();
+		textBox_0.click();
+		textBox_0.click();
 		WebElement textBox_first5 = driver.findElement(By.xpath("(//span[@class='sciop'])[8]"));
 		textBox_first5.click();
-		WebElement textBox_firstname5 = driver.findElement(By.xpath("(//span[@class='scinm'])[8]"));
-		textBox_firstname5.click();
-		textBox_firstname1.click();
-		textBox_firstname1.click();
-	}
-	@Test
-	public void prints5() {
-		System.setProperty("webdriver.chrome.driver","C:\\Driver\\chromedriver.exe");
-		WebDriver driver= new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://www.calculator.net");
 		
-		WebElement textBox_firstname = driver.findElement(By.xpath("(//span[@class='sciop'])[3]"));
+		
+		textBox_firstname1.click();
+		textBox_0.click();
+		textBox_0.click();
+	
+		Thread.sleep(3000);
+		textBox.click();
+		
+		//ADDITION
+		
+		WebElement textBox3 = driver.findElement(By.xpath("(//span[@class='sciop'])[3]"));
+		textBox3.click();
+		textBox_firstname1.click();
+		textBox_firstname2.click();
 		textBox_firstname.click();
-		WebElement textBox_firstname1 = driver.findElement(By.xpath("(//span[@class='scinm'])[8]"));
 		textBox_firstname1.click();
-		WebElement textBox_firstname9 = driver.findElement(By.xpath("(//span[@class='scinm'])[9]"));
-		textBox_firstname9.click();
-		WebElement textBox_firstname2 = driver.findElement(By.xpath("(//span[@class='scinm'])[4]"));
 		textBox_firstname2.click();
-		textBox_firstname1.click();
-		textBox_firstname9.click();
-		textBox_firstname2.click();		
-		WebElement textBox_firstname4 = driver.findElement(By.xpath("(//span[@class='sciop'])[1]"));
-		textBox_firstname4.click();
-		textBox_firstname9.click();
-		textBox_firstname2.click();
-		WebElement textBox_firstname7 = driver.findElement(By.xpath("(//span[@class='scinm'])[5]"));
-		textBox_firstname7.click();
-		textBox_firstname9.click();
-		textBox_firstname2.click();
-		textBox_firstname7.click();
-	}
-	@Test
-	public void prints65() {
-		System.setProperty("webdriver.chrome.driver","C:\\Driver\\chromedriver.exe");
-		WebDriver driver= new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://www.calculator.net");
+		textBox_firstname.click();
 		
-		WebElement textBox_first1 = driver.findElement(By.xpath("(//span[@class='scinm'])[8]"));
-		textBox_first1.click();
-		WebElement textBox_first9 = driver.findElement(By.xpath("(//span[@class='scinm'])[9]"));
-		textBox_first9.click();
-		WebElement textBox_first2 = driver.findElement(By.xpath("(//span[@class='scinm'])[4]"));
-		textBox_first2.click();
-		WebElement textBox_first3 = driver.findElement(By.xpath("(//span[@class='scinm'])[2]"));
-		textBox_first3.click();
-		textBox_first1.click();
-		textBox_first9.click();
-		WebElement textBox_firstme8 = driver.findElement(By.xpath("(//span[@class='sciop'])[3]"));
-		textBox_firstme8.click();
-		textBox_firstme8.click();
-		textBox_first1.click();
-		textBox_first9.click();
-		WebElement textBox_first0 = driver.findElement(By.xpath("(//span[@class='scinm'])[10]"));
-		textBox_first0.click();
-		WebElement textBox_first09 = driver.findElement(By.xpath("(//span[@class='scinm'])[3]"));
-		textBox_first09.click();
-		textBox_first2.click();
-		WebElement textBox_first8 = driver.findElement(By.xpath("(//span[@class='scinm'])[2]"));
-		textBox_first8.click();
-		textBox_first1.click();
-		textBox_first9.click();
-		}
+		WebElement textBox13 = driver.findElement(By.xpath("(//span[@class='sciop'])[1]"));
+		textBox13.click();
+		
+		textBox_firstname2.click();
+		textBox_firstname.click();
+		textBox_firstname5.click();
+		textBox_firstname2.click();
+		textBox_firstname.click();
+		textBox_firstname5.click();
+		
+		Thread.sleep(3000);
+		textBox.click();
+		
+		//SUBTRSCTION
+		
+		textBox_firstname1.click();
+		textBox_firstname2.click();
+		textBox_firstname.click();
+		WebElement textBox_8 = driver.findElement(By.xpath("(//span[@class='scinm'])[2]"));
+		textBox_8.click();
+		textBox_firstname1.click();
+		textBox_firstname2.click();
+		
+		textBox3.click();
+		
+		textBox3.click();
+		textBox_firstname1.click();
+		textBox_firstname2.click();
+		textBox_0.click();
+		WebElement textBox_9 = driver.findElement(By.xpath("(//span[@class='scinm'])[3]"));
+		textBox_9.click();
+		textBox_firstname.click();
+		textBox_8.click();
+		textBox_firstname1.click();
+		textBox_firstname2.click();
+	}
 }
