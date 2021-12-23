@@ -100,5 +100,7 @@ public class calculater {
 		textBox_8.click();
 		textBox_firstname1.click();
 		textBox_firstname2.click();
+		Thread.sleep(3000);
+		driver.quit();
 	}
 }
