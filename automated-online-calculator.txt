@@ -24,7 +24,8 @@ public class calculater1 {
 
 	
 	  
-	  @Test(priority=0) public void multi() { 
+	  @Test(priority=0) 
+	  public void multi() { 
 	  WebElement textBox_firstname =driver.findElement(By.xpath("(//span[@class='scinm'])[4]"));
 	  textBox_firstname.click();
 	  WebElement textBox_firstname1 =driver.findElement(By.xpath("(//span[@class='scinm'])[8]"));
@@ -43,7 +44,8 @@ public class calculater1 {
 	  
 	  }
 	  
-	  @Test(priority=1) public void DIVISION(){
+	  @Test(priority=1)
+	  public void DIVISION(){
 	  WebElement textBox_firstname =driver.findElement(By.xpath("(//span[@class='scinm'])[4]"));
 	  textBox_firstname.click(); 
 	  WebElement textBox_0 =driver.findElement(By.xpath("(//span[@class='scinm'])[10]"));
