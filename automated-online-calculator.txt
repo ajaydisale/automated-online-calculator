@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -20,38 +21,29 @@ public class calculater1 {
 		driver.get("https://www.calculator.net");
 
 	}
-	  @Test(priority=0) public void multi() throws InterruptedException{ 
+
+	
+	  
+	  @Test(priority=0) public void multi() { 
 	  WebElement textBox_firstname =driver.findElement(By.xpath("(//span[@class='scinm'])[4]"));
-	  textBox_firstname.click(); 
+	  textBox_firstname.click();
 	  WebElement textBox_firstname1 =driver.findElement(By.xpath("(//span[@class='scinm'])[8]"));
-	  textBox_firstname1.click();
+	  textBox_firstname1.click(); 
 	  WebElement textBox_firstname2 =driver.findElement(By.xpath("(//span[@class='scinm'])[9]"));
-	  textBox_firstname2.click();
+	  textBox_firstname2.click(); 
 	  WebElement textBox_firstname4 =driver.findElement(By.xpath("(//span[@class='sciop'])[5]"));
-	  textBox_firstname4.click();
+	  textBox_firstname4.click(); 
 	  WebElement textBox_firstname5 =driver.findElement(By.xpath("//span[@onclick='r(5)']"));
-	  textBox_firstname5.click();
+	  textBox_firstname5.click(); 
 	  textBox_firstname1.click();
 	  textBox_firstname5.click();
-	  
-	  Thread.sleep(3000);
-	  
-	  String
-	  result=driver.findElement(By.xpath("//div[@id='sciOutPut']")).getText();
-	  
-	  if(result.equals(" 222075"))
-	  {
-		  System.out.println("Test passs..");
-		  }
-	  else
-	  {
-	  System.out.println("Test failed..");
-	  }
-	  WebElement textBox =
-	  driver.findElement(By.xpath("(//span[@class='scieq'])[1]")); textBox.click();
+	  String result1= " 222075";
+	  String actualresult =driver.findElement(By.xpath("//div[@id='sciOutPut']")).getText();
+	  Assert.assertEquals(actualresult, result1);  
 	  
 	  }
-	  @Test(priority=1) public void DIVISION() throws InterruptedException {
+	  
+	  @Test(priority=1) public void DIVISION(){
 	  WebElement textBox_firstname =driver.findElement(By.xpath("(//span[@class='scinm'])[4]"));
 	  textBox_firstname.click(); 
 	  WebElement textBox_0 =driver.findElement(By.xpath("(//span[@class='scinm'])[10]"));
@@ -63,28 +55,15 @@ public class calculater1 {
 	  
 	  WebElement textBox_firstname1 =driver.findElement(By.xpath("(//span[@class='scinm'])[8]"));
 	  textBox_firstname1.click(); textBox_0.click(); textBox_0.click();
-	 
-	  Thread.sleep(3000);
-	  
-	  String
-	  result1=driver.findElement(By.xpath("//div[@id='sciOutPut']")).getText();
-	  
-	  if(result1.equals(" 20"))
-	  {
-		  System.out.println("Test passs..");
-		  } 
-	  else 
-	  {
-	  System.out.println("Test failed.."); }
-	  
-	  Thread.sleep(3000); WebElement textBox = driver.findElement(By.xpath("(//span[@class='scieq'])[1]")); textBox.click();
-	  
+	  String result1= " 20";
+	  String actualresult =driver.findElement(By.xpath("//div[@id='sciOutPut']")).getText();
+	  Assert.assertEquals(actualresult, result1);  
 	  
 	  
 	  }
 	  
 	  @Test(priority = 2)
-	public void ADDITION() throws InterruptedException {
+	    public void ADDITION() {
 		WebElement textBox3 = driver.findElement(By.xpath("(//span[@class='sciop'])[3]"));
 		textBox3.click();
 		WebElement textBox_firstname1 = driver.findElement(By.xpath("(//span[@class='scinm'])[8]"));
@@ -108,23 +87,16 @@ public class calculater1 {
 		textBox_firstname.click();
 		textBox_firstname5.click();
 
-		String result2 = driver.findElement(By.xpath("//div[@id='sciOutPut']")).getText();
-
-		if (result2.equals(" 111111")) {
-			System.out.println("Test passs..");
-		} else {
-			System.out.println("Test failed..");
-		}
-
-		Thread.sleep(3000);
-		WebElement textBox = driver.findElement(By.xpath("(//span[@class='scieq'])[1]"));
-
-		textBox.click();
-
+		
+		  
+		  String result1= " 111111";
+		  String actualresult =driver.findElement(By.xpath("//div[@id='sciOutPut']")).getText();
+		  Assert.assertEquals(actualresult, result1);  
+		  
 	}
 
 	@Test(priority = 3)
-	public void SUBTRSCTION() throws InterruptedException {
+	public void SUBTRSCTION(){
 		WebElement textBox_firstname1 = driver.findElement(By.xpath("(//span[@class='scinm'])[8]"));
 		textBox_firstname1.click();
 		WebElement textBox_firstname2 = driver.findElement(By.xpath("(//span[@class='scinm'])[9]"));
@@ -150,17 +122,12 @@ public class calculater1 {
 		textBox_8.click();
 		textBox_firstname1.click();
 		textBox_firstname2.click();
-
-		Thread.sleep(3000);
-
-		String result3 = driver.findElement(By.xpath("//div[@id='sciOutPut']")).getText();
-
-		if (result3.equals(" 23329646")) {
-			System.out.println("Test passs..");
-		} else {
-			System.out.println("Test failed..");
-		}
-
+		
+		  
+		  String result1= " 23329646";
+		  String actualresult =driver.findElement(By.xpath("//div[@id='sciOutPut']")).getText();
+		  Assert.assertEquals(actualresult, result1);  
+		  
 	}
 
 	@AfterMethod
