@@ -21,9 +21,6 @@ public class calculater1 {
 		driver.get("https://www.calculator.net");
 
 	}
-
-	
-	  
 	  @Test(priority=0) 
 	  public void multi() { 
 	  WebElement textBox_firstname =driver.findElement(By.xpath("(//span[@class='scinm'])[4]"));
